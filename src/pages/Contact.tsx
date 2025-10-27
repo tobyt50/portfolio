@@ -42,14 +42,14 @@ export const Contact = () => {
   };
 
   return (
-    <section className="max-w-2xl mx-auto py-14">
+    <section className="max-w-2xl mx-auto py-3">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
         className="text-center mb-8"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-50">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-900">
           Get In Touch
         </h2>
         <p className="text-gray-600 dark:text-gray-400 mt-2">
@@ -59,13 +59,13 @@ export const Contact = () => {
 
       <form
         onSubmit={handleSubmit}
-        className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-6 md:p-8 shadow-sm"
+        className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-black p-6 md:p-8 shadow-sm"
       >
         <div className="flex flex-col gap-5">
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-400 mb-1"
             >
               Name
             </label>
@@ -76,14 +76,14 @@ export const Contact = () => {
               required
               value={form.name}
               onChange={handleChange}
-              className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-2 text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-2 text-gray-800 dark:text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
             />
           </div>
 
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-400 mb-1"
             >
               Email
             </label>
@@ -94,14 +94,14 @@ export const Contact = () => {
               required
               value={form.email}
               onChange={handleChange}
-              className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-2 text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-2 text-gray-800 dark:text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
             />
           </div>
 
           <div>
             <label
               htmlFor="message"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-400 mb-1"
             >
               Message
             </label>
@@ -112,7 +112,7 @@ export const Contact = () => {
               required
               value={form.message}
               onChange={handleChange}
-              className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-2 text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 resize-none"
+              className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-2 text-gray-800 dark:text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500 resize-none"
             ></textarea>
           </div>
 

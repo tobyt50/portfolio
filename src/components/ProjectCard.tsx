@@ -22,7 +22,7 @@ export const ProjectCard = ({
     <motion.div
       whileHover={{ y: -5 }}
       transition={{ duration: 0.2 }}
-      className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+      className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-black overflow-hidden shadow-sm hover:shadow-md transition-shadow"
     >
       <div className="aspect-video overflow-hidden">
         <img
@@ -33,7 +33,7 @@ export const ProjectCard = ({
       </div>
 
       <div className="p-5">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-2">
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-900 mb-2">
           {title}
         </h3>
         <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
@@ -44,7 +44,7 @@ export const ProjectCard = ({
           {tech.map((t) => (
             <span
               key={t}
-              className="px-3 py-1 rounded-full text-xs border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-950 text-gray-700 dark:text-gray-300"
+              className="px-3 py-1 rounded-full text-xs border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-800"
             >
               {t}
             </span>
@@ -64,7 +64,7 @@ export const ProjectCard = ({
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 text-sm font-medium"
+            className="flex items-center gap-1 text-gray-700 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 text-sm font-medium"
           >
             <Github size={16} /> Code
           </a>

@@ -8,12 +8,12 @@ export const ThemeToggle = () => {
     <button
       onClick={toggleTheme}
       aria-label="Toggle theme"
-      className="p-2 rounded-full border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-900 hover:scale-105 transition-transform"
+      className="p-2 rounded-full bg-gray-100 dark:bg-gray-200 hover:bg-gray-100 dark:hover:bg-gray-200 hover:scale-105 transition"
     >
       {theme === "light" ? (
-        <Moon className="w-4 h-4 text-gray-800" />
+        <Moon className="w-4 h-4 text-gray-600" />
       ) : (
-        <Sun className="w-4 h-4 text-gray-100" />
+        <Sun className="w-4 h-4 text-gray-900" />
       )}
     </button>
   );

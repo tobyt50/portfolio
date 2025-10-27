@@ -16,7 +16,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.25 }}
-          className="flex-1 px-4 sm:px-10 md:px-20 py-10  rounded-2xl"
+          className="flex-1 px-4 sm:px-10 md:px-20 py-10 rounded-2xl bg-gray-50 dark:bg-zinc-950"
         >
           {children}
         </motion.main>

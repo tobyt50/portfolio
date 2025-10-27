@@ -4,14 +4,14 @@ import { projects } from "../data/projects";
 
 export const Projects = () => {
   return (
-    <section className="max-w-6xl mx-auto py-10">
+    <section className="max-w-6xl mx-auto py-3">
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="text-center mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-50">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-900">
           Featured Projects
         </h2>
         <p className="text-gray-600 dark:text-gray-400 mt-2">
