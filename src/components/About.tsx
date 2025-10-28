@@ -21,7 +21,7 @@ export const AboutSection = () => {
         </div>
 
         <div className="flex-1 text-center md:text-left">
-          <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-50 mb-2">
+          <h3 className="text-2xl font-semibold text-gray-900 mb-2">
             About Me
           </h3>
 
