@@ -15,7 +15,7 @@ export const Projects = () => {
           Featured Projects
         </h2>
         <p className="text-gray-600 dark:text-gray-400 mt-2">
-          A selection of my best work — real-world applications showcasing my
+          A selection of my best work - real-world applications showcasing my
           skills in React, Node.js, and TypeScript.
         </p>
       </motion.div>
