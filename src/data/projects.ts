@@ -4,22 +4,50 @@ import flowsplit from "../assets/flowsplit.png";
 import ppalinkGif from "../assets/ppalink-demo.gif";
 import havaGif from "../assets/hava-demo.gif";
 import flowsplitGif from "../assets/flowsplit-demo.gif";
+import givar from "../assets/givar.png";
+import givarGif from "../assets/givar-demo.gif";
 
 export const projects = [
+  {
+    title: "Givar Impact – Transparent Crowdfunding FinTech Platform",
+    description:
+      "A full-stack platform built for a client to streamline donations, track impact, and manage nonprofit workflows. Developed end-to-end using modern web technologies with secure and reliable payment integration.",
+    tech: [
+      "TypeScript",
+      "Next.js",
+      "Nest.js",
+      "PostgreSQL",
+      "Paystack",
+      "Apple Pay",
+      "Resend Email",
+      "REST APIs",
+      "Tailwind CSS",
+      "Secure S3 Object Storage",
+      "Cloudinary",
+      "PostHog",
+      "Sentry"
+    ],
+    liveUrl: "https://givarapp.com",
+    githubUrl: "https://github.com/givarhq/givar-impact-mvp",
+    image: givar,
+    gif: givarGif,
+    demoUrl: "https://www.youtube.com/embed/YOUR_GIVAR_VIDEO_ID?autoplay=1&mute=1&rel=0&modestbranding=1",
+  },
+
   {
     title: "FlowSplit - Smart Expense & Payment Splitting",
     description:
       "A full-stack application for splitting expenses and managing shared payments, featuring clean UX, secure APIs, and scalable backend architecture.",
     tech: [
       "TypeScript",
-      "React",
-      "Node.js",
-      "Express",
+      "Next.js",
+      "Nest.js",
       "PostgreSQL",
       "PayStack",
       "Stripe",
       "REST APIs",
       "Tailwind CSS",
+      "Sentry"
     ],
     liveUrl: "https://flowsplit.vercel.app",
     githubUrl: "https://github.com/tobyt50/FlowSplit",
@@ -39,6 +67,7 @@ export const projects = [
       "Prisma",
       "Express",
       "PostgreSQL",
+      "Socket.IO",
       "Stripe",
       "SendGrid",
     ],
