@@ -128,7 +128,7 @@ export const ProjectCard = ({
         </div>
       </motion.div>
 
-      {/* ---- Demo Modal ---- */}
+      {/* --- Demo Modal --- */}
       <AnimatePresence>
         {showDemo && (
           <motion.div
