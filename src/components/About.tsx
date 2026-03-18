@@ -4,7 +4,7 @@ import profileImg from "../assets/profile.jpg";
 
 export const AboutSection = () => {
   return (
-    <section className="max-w-5xl mx-auto mt-24 px-4 md:px-0">
+    <section className="max-w-5xl mx-auto mt-12 md:mt-16 px-4 md:px-0">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -21,7 +21,7 @@ export const AboutSection = () => {
         </div>
 
         <div className="flex-1 text-center md:text-left">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+          <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-900 mb-2">
             About Me
           </h3>
 
