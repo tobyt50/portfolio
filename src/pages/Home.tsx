@@ -4,45 +4,24 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import { AboutSection } from "../components/About";
 
 export const Home = () => {
-  const skillGroups = [
-    {
-      title: "Frontend",
-      items: [
-        "React (Vite + TypeScript)",
-        "Tailwind CSS",
-        "Framer Motion",
-        "Zustand",
-        "Responsive Design",
-      ],
-    },
-    {
-      title: "Backend",
-      items: [
-        "Node.js (Express)",
-        "Prisma ORM",
-        "PostgreSQL (Neon)",
-        "REST API Design",
-        "Socket.IO (Realtime)",
-      ],
-    },
-    {
-      title: "Cloud & DevOps",
-      items: [
-        "Vercel + Render",
-        "S3 (iDrive e2)",
-        "Cloudinary (Media)",
-        "Stripe Integration",
-        "SendGrid (Email)",
-        "JWT Auth",
-      ],
-    },
+  // Split skills into two rows for the marquee effect
+  const frontendSkills = [
+    "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Zustand", "Next.js", "Responsive Design",
+    // Duplicated for seamless infinite scrolling
+    "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Zustand", "Next.js", "Responsive Design",
+  ];
+
+  const backendCloudSkills = [
+    "Node.js", "Express", "Prisma ORM", "PostgreSQL", "Socket.IO", "Vercel", "Stripe", "AWS S3", "JWT Auth",
+    // Duplicated for seamless infinite scrolling
+    "Node.js", "Express", "Prisma ORM", "PostgreSQL", "Socket.IO", "Vercel", "Stripe", "AWS S3", "JWT Auth",
   ];
 
   const name = "Matthew Tedunjaiye";
   const letters = Array.from(name);
 
   return (
-    <section className="flex flex-col items-center justify-center text-center py-4 sm:py-8 md:py-10">
+    <section className="flex flex-col items-center justify-center text-center py-4 sm:py-8 md:py-10 overflow-hidden">
       {/* --- HERO --- */}
       <motion.div
         initial={{ opacity: 0, y: 15 }}
@@ -108,36 +87,53 @@ export const Home = () => {
         </div>
       </motion.div>
 
-      {/* --- SKILL GROUPS --- */}
+      {/* --- INFINITE MARQUEE --- */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.2, duration: 0.2 }}
-        className="mt-12 w-full max-w-5xl px-4 grid md:grid-cols-3 gap-6 text-sm"
+        transition={{ delay: 0.3, duration: 0.5 }}
+        className="mt-12 w-full max-w-[100vw] overflow-hidden relative flex flex-col gap-4 py-4 mask-edges"
+        style={{
+          // Creates a fading effect on the left and right edges of the marquee
+          maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)"
+        }}
       >
-        {skillGroups.map((group, index) => (
+        {/* Row 1: Scrolling Left */}
+        <div className="flex w-max">
           <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.2, delay: 0.2 + index * 0.1 }}
-            className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-black p-6 shadow-sm hover:shadow-md transition-shadow"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
+            className="flex gap-4 px-2"
           >
-            <h3 className="text-base font-semibold mb-3 text-gray-900 dark:text-gray-900">
-              {group.title}
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {group.items.map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 rounded-full border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-800"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
+            {frontendSkills.map((tech, index) => (
+              <span
+                key={`row1-${index}`}
+                className="px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-black text-gray-700 dark:text-gray-300 font-medium text-sm whitespace-nowrap shadow-sm"
+              >
+                {tech}
+              </span>
+            ))}
           </motion.div>
-        ))}
+        </div>
+
+        {/* Row 2: Scrolling Right */}
+        <div className="flex w-max relative left-[-50%]">
+          <motion.div
+            animate={{ x: ["0%", "50%"] }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
+            className="flex gap-4 px-2"
+          >
+            {backendCloudSkills.map((tech, index) => (
+              <span
+                key={`row2-${index}`}
+                className="px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-black text-gray-700 dark:text-gray-300 font-medium text-sm whitespace-nowrap shadow-sm"
+              >
+                {tech}
+              </span>
+            ))}
+          </motion.div>
+        </div>
       </motion.div>
 
       {/* --- ABOUT --- */}
