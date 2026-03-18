@@ -71,7 +71,7 @@ export const Contact = () => {
 
         {/* Quick Copy Email Section */}
         <div className="mt-6 inline-flex items-center gap-2 bg-white dark:bg-black border border-gray-200 dark:border-gray-800 rounded-full pl-4 pr-1.5 py-1.5 shadow-sm">
-          <span className="text-sm font-medium text-gray-900 dark:text-white select-all">
+          <span className="text-sm font-medium text-gray-800 dark:text-gray-800 select-all">
             {emailRef.current}
           </span>
           <button
@@ -127,7 +127,7 @@ export const Contact = () => {
               required
               value={form.name}
               onChange={handleChange}
-              className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-2 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-2 text-gray-800 dark:text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
             />
           </div>
 
@@ -145,7 +145,7 @@ export const Contact = () => {
               required
               value={form.email}
               onChange={handleChange}
-              className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-2 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-2 text-gray-800 dark:text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
             />
           </div>
 
@@ -163,7 +163,7 @@ export const Contact = () => {
               required
               value={form.message}
               onChange={handleChange}
-              className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-2 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 resize-none"
+              className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 px-4 py-2 text-gray-800 dark:text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500 resize-none"
             ></textarea>
           </div>
 

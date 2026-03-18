@@ -97,17 +97,17 @@ export const Home = () => {
           WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)"
         }}
       >
-        {/* Row 1: Scrolling Left (Slower speed: 50s) */}
+        {/* Row 1: Scrolling Left */}
         <div className="flex w-max">
           <motion.div
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 50 }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 80 }}
             className="flex gap-4 px-2"
           >
             {frontendSkills.map((tech, index) => (
               <span
                 key={`row1-${index}`}
-                className="px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-800 dark:text-white font-medium text-sm whitespace-nowrap shadow-sm"
+                className="px-4 py-2 rounded-full border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-800 font-medium text-sm whitespace-nowrap shadow-sm"
               >
                 {tech}
               </span>
@@ -115,17 +115,17 @@ export const Home = () => {
           </motion.div>
         </div>
 
-        {/* Row 2: Scrolling Right (Fixed logic, Slower speed: 60s) */}
+        {/* Row 2: Scrolling Right */}
         <div className="flex w-max">
           <motion.div
             animate={{ x: ["-50%", "0%"] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 60 }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 90 }}
             className="flex gap-4 px-2"
           >
             {backendCloudSkills.map((tech, index) => (
               <span
                 key={`row2-${index}`}
-                className="px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-800 dark:text-white font-medium text-sm whitespace-nowrap shadow-sm"
+                className="px-4 py-2 rounded-full border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-800 font-medium text-sm whitespace-nowrap shadow-sm"
               >
                 {tech}
               </span>
