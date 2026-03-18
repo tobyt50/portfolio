@@ -46,8 +46,8 @@ export const Home = () => {
         <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
           Full-Stack Developer crafting scalable, real-time web platforms with{" "}
           <span className="font-semibold">TypeScript</span>,{" "}
-          <span className="font-semibold">React</span>, and{" "}
-          <span className="font-semibold">Node.js</span>.
+          <span className="font-semibold">Next.js</span>, and{" "}
+          <span className="font-semibold">NestJS</span>.
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mb-8">
