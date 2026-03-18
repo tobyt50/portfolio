@@ -13,7 +13,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-black/70 border-b border-gray-200 dark:border-gray-800">
+    <nav className="sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-black/70">
       <div className="max-w-6xl mx-auto px-4 py-3 rounded-xl relative flex items-center justify-between md:justify-end">
 
         {/* Mobile/Left-aligned Global Social Links */}
@@ -36,8 +36,8 @@ export const Navbar = () => {
                 key={link.path}
                 to={link.path}
                 className={`relative px-3 py-1.5 text-sm font-medium transition-colors ${isActive
-                    ? "text-primary-600 dark:text-primary-400"
-                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+                  ? "text-primary-600 dark:text-primary-400"
+                  : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
                   }`}
               >
                 {isActive && (

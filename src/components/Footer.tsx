@@ -7,11 +7,7 @@ export const Footer = () => {
 
         {/* Left: Copyright */}
         <p className="text-sm text-gray-600 dark:text-gray-400">
-          © {new Date().getFullYear()} Matthew Tedunjaiye. Built with{" "}
-          <span className="text-primary-600 dark:text-primary-400 font-medium">
-            React + Vite
-          </span>
-          .
+          © {new Date().getFullYear()} Matthew Tedunjaiye.
         </p>
 
         {/* Center: Explicit Email for visibility */}

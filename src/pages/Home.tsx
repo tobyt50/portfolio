@@ -101,7 +101,7 @@ export const Home = () => {
         <div className="flex w-max">
           <motion.div
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 80 }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 100 }}
             className="flex gap-4 px-2"
           >
             {frontendSkills.map((tech, index) => (
@@ -119,7 +119,7 @@ export const Home = () => {
         <div className="flex w-max">
           <motion.div
             animate={{ x: ["-50%", "0%"] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 90 }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 100 }}
             className="flex gap-4 px-2"
           >
             {backendCloudSkills.map((tech, index) => (
