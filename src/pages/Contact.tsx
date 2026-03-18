@@ -1,12 +1,25 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { Mail, Send } from "lucide-react";
+import { Mail, Send, Copy, CheckCircle2 } from "lucide-react";
 
 export const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const emailRef = useRef("tedunjaiyem@gmail.com");
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(emailRef.current);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy!", err);
+    }
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -55,6 +68,44 @@ export const Contact = () => {
         <p className="text-gray-600 dark:text-gray-400 mt-2">
           Have a project, job offer, or collaboration in mind? Let’s connect.
         </p>
+
+        {/* Quick Copy Email Section */}
+        <div className="mt-6 inline-flex items-center gap-2 bg-white dark:bg-black border border-gray-200 dark:border-gray-800 rounded-full pl-4 pr-1.5 py-1.5 shadow-sm">
+          <span className="text-sm font-medium text-gray-700 dark:text-gray-300 select-all">
+            {emailRef.current}
+          </span>
+          <button
+            onClick={handleCopyEmail}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 text-xs font-medium text-gray-700 dark:text-gray-300 transition relative overflow-hidden"
+            aria-label="Copy email address"
+          >
+            <AnimatePresence mode="wait">
+              {copied ? (
+                <motion.div
+                  key="check"
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -10, opacity: 0 }}
+                  className="flex items-center gap-1.5 text-green-600 dark:text-green-500"
+                >
+                  <CheckCircle2 size={14} />
+                  <span>Copied!</span>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="copy"
+                  initial={{ y: -10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: 10, opacity: 0 }}
+                  className="flex items-center gap-1.5"
+                >
+                  <Copy size={14} />
+                  <span>Copy</span>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </button>
+        </div>
       </motion.div>
 
       <form
@@ -134,7 +185,7 @@ export const Contact = () => {
 
           {success && (
             <p className="text-center text-sm text-green-600 dark:text-green-400 mt-2">
-              ✅ Message sent successfully!
+              Message sent successfully!
             </p>
           )}
         </div>
