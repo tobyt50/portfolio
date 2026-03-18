@@ -33,7 +33,16 @@ export const AboutSection = () => {
           </p>
 
           <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-            I’ve developed production-ready platforms like{" "}
+            I’ve developed live platforms like{" "}
+            <a
+              href="https://givarapp.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-primary-600 dark:text-primary-400 hover:underline hover:text-primary-700 dark:hover:text-primary-300 transition"
+            >
+              Givar
+            </a>{" "}
+            and{" "}
             <a
               href="https://ppalink.vercel.app"
               target="_blank"
@@ -41,15 +50,6 @@ export const AboutSection = () => {
               className="font-medium text-primary-600 dark:text-primary-400 hover:underline hover:text-primary-700 dark:hover:text-primary-300 transition"
             >
               PPALink
-            </a>{" "}
-            and{" "}
-            <a
-              href="https://havaapp.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-primary-600 dark:text-primary-400 hover:underline hover:text-primary-700 dark:hover:text-primary-300 transition"
-            >
-              Hava
             </a>
             , focusing on performance, usability, and maintainability.
           </p>
