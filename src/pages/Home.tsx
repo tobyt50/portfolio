@@ -4,18 +4,17 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import { AboutSection } from "../components/About";
 
 export const Home = () => {
-  // Split skills into two rows for the marquee effect
-  const frontendSkills = [
-    "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Zustand", "Next.js", "Responsive Design",
-    // Duplicated for seamless infinite scrolling
-    "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Zustand", "Next.js", "Responsive Design",
+  // Base arrays
+  const baseFrontend = [
+    "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Zustand", "Next.js", "Responsive Design"
+  ];
+  const baseBackendCloud = [
+    "Node.js", "Express", "Prisma ORM", "PostgreSQL", "Socket.IO", "Vercel", "Stripe", "AWS S3", "JWT Auth"
   ];
 
-  const backendCloudSkills = [
-    "Node.js", "Express", "Prisma ORM", "PostgreSQL", "Socket.IO", "Vercel", "Stripe", "AWS S3", "JWT Auth",
-    // Duplicated for seamless infinite scrolling
-    "Node.js", "Express", "Prisma ORM", "PostgreSQL", "Socket.IO", "Vercel", "Stripe", "AWS S3", "JWT Auth",
-  ];
+  // Quadrupled arrays to ensure the marquee never runs out of content on ultra-wide screens
+  const frontendSkills = [...baseFrontend, ...baseFrontend, ...baseFrontend, ...baseFrontend];
+  const backendCloudSkills = [...baseBackendCloud, ...baseBackendCloud, ...baseBackendCloud, ...baseBackendCloud];
 
   const name = "Matthew Tedunjaiye";
   const letters = Array.from(name);
@@ -94,22 +93,21 @@ export const Home = () => {
         transition={{ delay: 0.3, duration: 0.5 }}
         className="mt-12 w-full max-w-[100vw] overflow-hidden relative flex flex-col gap-4 py-4 mask-edges"
         style={{
-          // Creates a fading effect on the left and right edges of the marquee
           maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
           WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)"
         }}
       >
-        {/* Row 1: Scrolling Left */}
+        {/* Row 1: Scrolling Left (Slower speed: 50s) */}
         <div className="flex w-max">
           <motion.div
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 50 }}
             className="flex gap-4 px-2"
           >
             {frontendSkills.map((tech, index) => (
               <span
                 key={`row1-${index}`}
-                className="px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-black text-gray-700 dark:text-gray-300 font-medium text-sm whitespace-nowrap shadow-sm"
+                className="px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-800 dark:text-white font-medium text-sm whitespace-nowrap shadow-sm"
               >
                 {tech}
               </span>
@@ -117,17 +115,17 @@ export const Home = () => {
           </motion.div>
         </div>
 
-        {/* Row 2: Scrolling Right */}
-        <div className="flex w-max relative left-[-50%]">
+        {/* Row 2: Scrolling Right (Fixed logic, Slower speed: 60s) */}
+        <div className="flex w-max">
           <motion.div
-            animate={{ x: ["0%", "50%"] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
+            animate={{ x: ["-50%", "0%"] }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 60 }}
             className="flex gap-4 px-2"
           >
             {backendCloudSkills.map((tech, index) => (
               <span
                 key={`row2-${index}`}
-                className="px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-black text-gray-700 dark:text-gray-300 font-medium text-sm whitespace-nowrap shadow-sm"
+                className="px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-800 dark:text-white font-medium text-sm whitespace-nowrap shadow-sm"
               >
                 {tech}
               </span>
